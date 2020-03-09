@@ -128,11 +128,11 @@ moonplot <- function(
 }
 
 #' @export
-sigmaOutput <- function(outputId, width = "100%", height = "400px") {
-  htmlwidgets::shinyWidgetOutput(outputId, "sigma", width, height, package = "sigma")
+moonOutput <- function(outputId, width = "100%", height = "400px") {
+  htmlwidgets::shinyWidgetOutput(outputId, "rhtmlMoonPlot", width, height, package = "rhtmlMoonPlot")
 }
 #' @export
-renderSigma <- function(expr, env = parent.frame(), quoted = FALSE) {
+renderMoon <- function(expr, env = parent.frame(), quoted = FALSE) {
   if (!quoted) { expr <- substitute(expr) } # force quoted
-  htmlwidgets::shinyRenderWidget(expr, sigmaOutput, env, quoted = TRUE)
+  htmlwidgets::shinyRenderWidget(expr, moonOutput, env, quoted = TRUE)
 }
